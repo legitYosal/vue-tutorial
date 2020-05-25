@@ -9,9 +9,8 @@ Vue.use(Vuetify)
 export default ctx => {
     const vuetify = new Vuetify({
         theme: {
-            dark: false,
             themes: {
-                dark: {
+                light: {
                     primary: '#9c27b0',
                     secondary: '#673ab7',
                     accent: '#3f51b5',

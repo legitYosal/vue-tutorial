@@ -1,6 +1,7 @@
 <template>
+    <v-container>
     <div id="evployee-table">
-        <p
+<!--         <p
             v-if="employees.length < 1" class="empty-table"
         >No employees</p>            
        <table v-else>
@@ -60,7 +61,53 @@
                 </tr>
             </tbody>
        </table>
+ -->
+    <v-data-table
+        :headers="headers"
+        :items="employees"
+        :items-per-page="100"
+        class="elevation-1"
+        hide-default-footer
+        :css="false"
+
+    >
+        <template v-slot:body="props">
+        <tbody 
+            name="velocity-anime" 
+            is="transition-group"
+            @enter="enter"
+            @beforeEnter="beforeEnter"
+            @leave="leave"
+        >
+          <template >
+          <tr class="employee-table" v-for="(item, index) in props.items" :key="item.id">
+            <td>
+                <div>
+                    {{item.name}}
+                </div>
+            </td>
+            <td>
+                <div>
+                    {{item.email}}
+                </div>
+            </td>
+            <td>
+                <div class="buttom-group">
+                <v-icon
+                    small
+                    @click="handleDelete(item.id, index)"
+                >
+                mdi-delete
+                </v-icon> 
+                </div>
+            </td>
+           </tr>
+            </template>
+      </tbody>
+      </template>
+    </v-data-table>
     </div>
+    </v-container>
 
 </template>
 
@@ -82,7 +129,27 @@
                 show: 1,
                 wait: true,
                 ptb: '0px', // padding top
-                mh: '50px'   // maximom height
+                mh: '50px',   // maximom height
+                headers: [
+                    {
+                        text: 'Name',
+                        align: 'center',
+                        sortable: false,
+                        value: 'name'
+                    },
+                    {
+                        text: 'Email',
+                        sortable: false,
+                        align: 'center',
+                        value: 'email'
+                    },
+                    {
+                        text: 'Actions',
+                        align: 'center',
+                        sortable: false,
+                        value: 'actions'
+                    }
+                ]
             }
         },
         methods: {
@@ -122,6 +189,7 @@
                 }
             },
             enter(el, done) {
+                console.log('hello')
                 // if (!process.client) return;
                 let divs = el.querySelectorAll('div')
                 Velocity (
@@ -161,8 +229,8 @@
     button {
         margin-left: 1rem;
         margin-right: 1rem;
-        background: #07889B;
-        border: 1px solid #07889B;
+        /*background: #07889B;*/
+        /*border: 1px solid #07889B;*/
         float: left;       
         /*width: 100%;*/
         /*display: none;*/

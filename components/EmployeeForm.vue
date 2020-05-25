@@ -1,8 +1,8 @@
 <template>
+    <v-container>
     <div id="employee-form">
         <form v-on:submit.prevent="handleSubmit">
-            <label>Employee name</label>
-            <input 
+<!--             <input 
                 v-model="employee.name" 
                 type="text" 
                 name="name"
@@ -10,16 +10,17 @@
                 @focus="clearStatus"
                 @keypress="clearStatus"
                 ref="first"
-            />
-            <label>Employee Email</label>
-            <input 
+            /> -->
+            <v-text-field label="employee name" v-model="employee.name" type="text" name="name" ref="first" ></v-text-field>
+<!--             <input 
                 v-model="employee.email" 
                 type="email" 
                 name="email"
                 :class="{ 'has-error': submiting && invalidEmail }"
                 @focus="clearStatus"
                 @keypress="clearStatus"
-            />
+            /> -->
+            <v-text-field label="employee email" v-model="employee.email" type="email" name="email" ></v-text-field>
             <transition name="fade">
             <p
                 v-if="error && submiting"
@@ -33,10 +34,11 @@
             > ✅ successfully added</p>
             </transition>
             <div class="button-div">
-                <button>Add Employee</button>                
+                <v-btn v-on:click="handleSubmit" block class="ma-2" outlined color="indigo">Add employee</v-btn>
             </div>
         </form>    
     </div>
+    </v-container>
 </template>
 
 <script>

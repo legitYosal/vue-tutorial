@@ -42,3 +42,5 @@ multi page application added
 absolute nav bar added 
 
 migrated to nuxt.js
+
+beautified employee page with vuetify but velocity does not work :/

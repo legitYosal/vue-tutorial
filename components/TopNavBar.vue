@@ -12,7 +12,14 @@
         name: 'top-nav-bar',
         created: function() {
             if (process.client)
-            window.onscroll = function() {
+                window.addEventListener('scroll', this.handleScroll)
+        },
+        destroyed: function() {
+            if (process.client)
+                window.removeEventListener('scroll', this.handleScroll)
+        },
+        methods: {
+            handleScroll() {
                 if (document.body.scrollTop > 55 || document.documentElement.scrollTop > 55) {
                     document.getElementById('navbar').style.padding = '5px 10px';
                 } else {

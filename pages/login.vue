@@ -1,9 +1,9 @@
 <template>
-    <v-container fill-height>
+    <v-container class="fill-height" fluid>
     <v-layout align-center justify-center class="layout-login-card">
-        <v-flex sm8 md6>
+        <v-flex sm8 md6 lg3>
             <v-card class="elevation-12">
-                <v-toolbar dark color="purple">
+                <v-toolbar dark color="blue light">
                     <v-toolbar-title>
                         Login Form 
                     </v-toolbar-title>
@@ -27,7 +27,7 @@
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn dark color="pink">Login</v-btn>
+                    <v-btn dark color="blue light">Login</v-btn>
                 </v-card-actions>
             </v-card>
         </v-flex>

@@ -1,7 +1,7 @@
 <template>
-<v-app>
+<v-container>
     <v-color-picker id="custom-color-picker"></v-color-picker> 
-  <div class="container">
+    <div class="container">
     <div>
       <logo />
       <h1 class="title">
@@ -27,8 +27,8 @@
         </a>
       </div>
     </div>
-  </div>
-</v-app>
+    </div>
+</v-container>
 </template>
 
 <script>

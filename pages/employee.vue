@@ -1,4 +1,6 @@
 <template>
+    <v-container>
+        
     <div id="employee-index">
         <!-- <routing-top-nav/> -->
         <h1>Employees</h1>
@@ -9,6 +11,7 @@
             v-bind:employees="employees"
         />          
     </div>
+    </v-container>
 </template>
 
 <script>
