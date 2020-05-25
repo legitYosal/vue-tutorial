@@ -23,9 +23,10 @@
     }    
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     #routing-top-nav {
         text-align: center;
+        // z-index: 10;
     }
 
     .nav-link-nuxt {
@@ -50,6 +51,7 @@
         top: 0px;
         background-color: #129991;
         transition: 1s;
+        z-index: 10;
     }
 
 </style>

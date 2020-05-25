@@ -14,10 +14,10 @@ import TopNavBar from '~/components/TopNavBar.vue'
 import ButtomFooter from '~/components/ButtomFooter.vue'
 
 export default {
-  components: {
-    TopNavBar,
-    ButtomFooter
-  }
+    components: {
+        TopNavBar,
+        ButtomFooter
+    }
 }
 </script>
 

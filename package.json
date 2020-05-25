@@ -15,7 +15,11 @@
     "node-sass": "^4.14.1",
     "nuxt": "^2.0.0",
     "sass-loader": "^8.0.2",
-    "velocity-animate": "^1.5.2"
+    "velocity-animate": "^1.5.2",
+    "vuetify": "^2.2.29"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@mdi/font": "^5.2.45",
+    "@nuxtjs/vuetify": "^1.11.2"
+  }
 }

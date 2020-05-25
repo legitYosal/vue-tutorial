@@ -1,6 +1,6 @@
 # nuxt-casual
 
-> transforming vue cli3 project over nuxtjs
+> sample project for learning vue.js 
 
 ## Build Setup
 

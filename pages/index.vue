@@ -1,4 +1,6 @@
 <template>
+<v-app>
+    <v-color-picker id="custom-color-picker"></v-color-picker> 
   <div class="container">
     <div>
       <logo />
@@ -26,12 +28,14 @@
       </div>
     </div>
   </div>
+</v-app>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
 
 export default {
+    layout: 'tify',
   components: {
     Logo
   }
@@ -68,5 +72,10 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+#custom-color-picker {
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
 }
 </style>

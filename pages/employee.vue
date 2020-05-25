@@ -21,6 +21,7 @@
         // props: {
         //     employee_slug: String,
         // },
+        layout: 'tify',
         components: {
             // RoutingTopNav,
             EmployeeTable,
