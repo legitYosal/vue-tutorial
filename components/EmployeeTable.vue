@@ -1,5 +1,4 @@
 <template>
-    <v-container>
     <div id="evployee-table">
 <!--         <p
             v-if="employees.length < 1" class="empty-table"
@@ -21,27 +20,17 @@
                 :css="false"
             >
                 <tr v-for="(employee, index) in employees" class="employee-table" :key="employee.id">
-                    <td v-if="editing === employee.id">
-                        <div>
-                        <input type="text" v-model="employee.name" name="edit-name">
-                        </div>
-                    </td>
-                    <td v-else> 
+                    <td> 
                         <div>
                         {{ employee.name }}                             
                         </div>
                     </td>
-                    <td v-if="editing === employee.id">
-                        <div>
-                        <input type="email" v-model="employee.email" name="edit-email">
-                        </div>
-                    </td>
-                    <td v-else> 
+                    <td> 
                         <div>
                         {{ employee.email }}                             
                         </div>
                     </td>
-                    <td v-if="editing !== employee.id">
+                    <td>
                         <div class="buttom-group">
                             <button
                                 @click="handleDelete(employee.id, index)"
@@ -52,16 +41,10 @@
                             >Edit</button>
                         </div>
                     </td>
-                    <td v-else>
-                        <div class="buttom-group">
-                            <button id="editing" @click="editEmployee(employee)">Save</button>
-                            <button id="editing" class="muted-button" @click="editing = null">Cancel</button>
-                        </div>
-                    </td>
                 </tr>
             </tbody>
-       </table>
- -->
+       </table> -->
+
     <v-data-table
         :headers="headers"
         :items="employees"
@@ -107,7 +90,6 @@
       </template>
     </v-data-table>
     </div>
-    </v-container>
 
 </template>
 
@@ -189,8 +171,6 @@
                 }
             },
             enter(el, done) {
-                console.log('hello')
-                // if (!process.client) return;
                 let divs = el.querySelectorAll('div')
                 Velocity (
                     divs,
@@ -253,6 +233,11 @@
     }
     table {
         table-layout: fixed;
+    }
+    .employee-table {
+        /*background-color: red;*/
+        padding: 40px;
+        margin: 50px;
     }
 
 

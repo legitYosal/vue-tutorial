@@ -1,26 +1,11 @@
 <template>
-    <v-container>
-    <div id="employee-form">
+    <v-layout align-center justify-center class="layout-login-card">
+    <v-flex sm8 md6 lg3>
+    <v-card class="elevation-12">
+        <v-card-text>
         <form v-on:submit.prevent="handleSubmit">
-<!--             <input 
-                v-model="employee.name" 
-                type="text" 
-                name="name"
-                :class="{ 'has-error': submiting && invalidName }"
-                @focus="clearStatus"
-                @keypress="clearStatus"
-                ref="first"
-            /> -->
-            <v-text-field label="employee name" v-model="employee.name" type="text" name="name" ref="first" ></v-text-field>
-<!--             <input 
-                v-model="employee.email" 
-                type="email" 
-                name="email"
-                :class="{ 'has-error': submiting && invalidEmail }"
-                @focus="clearStatus"
-                @keypress="clearStatus"
-            /> -->
-            <v-text-field label="employee email" v-model="employee.email" type="email" name="email" ></v-text-field>
+            <v-text-field prepend-icon="person" label="employee name" v-model="employee.name" type="text" name="name" ref="first" ></v-text-field>
+            <v-text-field prepend-icon="email" label="employee email" v-model="employee.email" type="email" name="email" ></v-text-field>
             <transition name="fade">
             <p
                 v-if="error && submiting"
@@ -36,9 +21,12 @@
             <div class="button-div">
                 <v-btn v-on:click="handleSubmit" block class="ma-2" outlined color="indigo">Add employee</v-btn>
             </div>
-        </form>    
-    </div>
-    </v-container>
+        </form>
+        </v-card-text>
+
+    </v-card>
+    </v-flex>
+    </v-layout>
 </template>
 
 <script>
@@ -114,10 +102,10 @@
     }
 </script>
 
-<style scoped>
-    form {
+<style>
+/*    form {
         margin-bottom: 2rem;
-    }
+    }*/
     .button-div {
         padding-top: 30px;
         display: flex;

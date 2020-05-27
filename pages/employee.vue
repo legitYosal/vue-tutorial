@@ -1,5 +1,4 @@
 <template>
-    <v-container>
         
     <div id="employee-index">
         <!-- <routing-top-nav/> -->
@@ -11,7 +10,6 @@
             v-bind:employees="employees"
         />          
     </div>
-    </v-container>
 </template>
 
 <script>
@@ -59,4 +57,8 @@
 
 </script>
 
-<style></style>
+<style>
+    h1 {
+        text-align: center;
+    }
+</style>
